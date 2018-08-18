@@ -9,7 +9,7 @@
         </div>
         <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4 float-right search">
             <div id="sb-search" class="sb-search">
-                <input id="search-box" type="text" class="search-box" (ngModel)="searchText"  name="q" />
+                <input id="search-box" type="text" class="search-box" [(ngModel)]="productFilter.name" />
                 <label for="search-box"><span class="glyphicon glyphicon-search search-icon"></span></label>
               </div>
         </div>
@@ -82,7 +82,7 @@
       </div>
       <div class="row">
         <div class="products">
-          <div class="product"  *ngFor="let p of products | filter: searchText ">
+          <div class="product"  *ngFor="let p of products | filterBy: productFilter ">
               <div class="pro-img">
                 <img src="{{p.img}}" alt="{{p.name}}">
               </div>

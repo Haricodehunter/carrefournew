@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   isLoading = false;
   public search: any;
   products: any[] = [];
-
+  productFilter: any = { name: '' };
   constructor(private router: Router,
               private formBuilder: FormBuilder,
               private i18nService: I18nService,

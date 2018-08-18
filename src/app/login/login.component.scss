@@ -89,7 +89,7 @@ h4{
   font-weight: bold;
 }
 .product{
-  display: inline-grid;
+  display: inline-table;
   width:33%;
   img{
     margin: 20px;
@@ -123,5 +123,13 @@ h4{
 @include media-breakpoint-down(xs) {
   .container {
     width: 100%;
+  }
+}
+
+@media screen and (max-width:767px){
+  .product{
+    display: block;
+    width:100%;
+    margin: 0 auto;
   }
 }

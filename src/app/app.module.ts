@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { FilterPipeModule } from 'ngx-filter-pipe';
 import { environment } from '@env/environment';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
@@ -21,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
     HttpClientModule,
+    FilterPipeModule,
     TranslateModule.forRoot(),
     NgbModule.forRoot(),
     CoreModule,
