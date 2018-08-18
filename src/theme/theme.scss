@@ -1,0 +1,18 @@
+/*
+ * Global application theme.
+ * Framework overrides and customization goes here.
+ * Author : Hariharan
+ */
+
+
+ .logo{
+     padding: 20px 0px;
+     position: relative;
+     display: block;
+ }
+ body{
+    font-family: $font;
+ }
+.search{
+    font-family: $font;
+}

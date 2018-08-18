@@ -1,0 +1,97 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4 float-left">
+          <div class="logo">
+            <a href="/"  title="Carrefour"><img src="/assets/logo.png" alt="Carrefour"/></a>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-3 col-sm-4 col-xs-4 float-right search">
+            <div id="sb-search" class="sb-search">
+                <input id="search-box" type="text" class="search-box" (ngModel)="searchText"  name="q" />
+                <label for="search-box"><span class="glyphicon glyphicon-search search-icon"></span></label>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="login-container">
+  <div class="login-box">
+    <!-- <h1 translate>APP_NAME</h1> -->
+    <div>
+      <!-- <h6 class="d-inline-block">v{{version}}</h6>
+      <div class="d-inline-block ml-3" ngbDropdown>
+        <button id="language-dropdown" class="btn btn-sm btn-secondary" ngbDropdownToggle>
+          {{currentLanguage}}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="language-dropdown">
+          <button class="dropdown-item" *ngFor="let language of languages" (click)="setLanguage(language)">
+            {{language}}
+          </button>
+        </div>
+      </div> -->
+    </div>
+    <div class="container">
+      <div class="card col-md-5 mt-3 mx-auto">
+        <div class="card-body">
+          <h4 class="card-title text-center">
+              Sign In Now
+          </h4>
+          <p class="text-center">Unlock awesome features!</p>
+          <form (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
+            <div class="alert alert-danger" [hidden]="!error || isLoading" translate>
+              Username or password incorrect.
+            </div>
+            <div class="form-group">
+              <label class="d-block">
+                <input type="text" class="form-control" formControlName="username" autocomplete="username"
+                       [placeholder]="'Username' | translate"/>
+                <span hidden translate>Username</span>
+                <small [hidden]="loginForm.controls.username.valid || loginForm.controls.username.untouched"
+                       class="text-danger" translate>
+                  Username is required
+                </small>
+              </label>
+              <label class="d-block">
+                <input type="password" class="form-control" formControlName="password" autocomplete="current-password"
+                       [placeholder]="'Password' | translate" required/>
+                <span hidden translate>Password</span>
+                <small [hidden]="loginForm.controls.password.valid || loginForm.controls.password.untouched"
+                       class="text-danger" translate>
+                  Password is required
+                </small>
+              </label>
+              <div class="form-check w-30 float-left">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" formControlName="remember"/>
+                  <span translate>Keep me logged in</span>
+                </label>
+              </div>
+              <div class="form-check w-30 float-right">
+                    <a href="#"><span translate>Forget password ?</span></a>
+                </div>
+            </div>
+            <button class="btn btn-primary w-100 submit" type="submit" [disabled]="loginForm.invalid || isLoading">
+              <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
+              <span translate>Sign in</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="products">
+          <div class="product"  *ngFor="let p of products | filter: searchText ">
+              <div class="pro-img">
+                <img src="{{p.img}}" alt="{{p.name}}">
+              </div>
+              <h4>{{p.name}}</h4>
+              <span class="price">{{p.price}}</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
